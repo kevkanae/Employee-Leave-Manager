@@ -13,8 +13,8 @@ export default function Main() {
   const history = useHistory();
 
   const handleClick = () => {
-    const url = "http://localhost:5000/add";
-    // const url = "https://kanae-leave-manager.herokuapp.com/add";
+    // const url = "http://localhost:5000/add";
+    const url = "https://kanae-leave-manager.herokuapp.com/add";
     axios
       .post(url, {
         leaveType: type,

@@ -12,8 +12,8 @@ export default function Login() {
   const history = useHistory();
   const handleClick = () => {
     if (validator.isEmail(mail)) {
-      const url = "http://localhost:5000/find";
-      // const url = "https://kanae-leave-manager.herokuapp.com/find";
+      // const url = "http://localhost:5000/find";
+      const url = "https://kanae-leave-manager.herokuapp.com/find";
       axios
         .post(url, { employeeEmail: mail, employeePassword: pass })
         .then((res) => {
