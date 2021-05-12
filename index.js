@@ -56,9 +56,9 @@ mongoose
 //-------------------------------------------------------------------------------------
 //Add Leave Data
 //-------------------------------------------------------------------------------------
-app.get("/", (req, res) => {
-  res.send("Hello from Express!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello from Express!");
+// });
 app.post("/add", (req, res) => {
   let add = new Leave(req.body);
   add
