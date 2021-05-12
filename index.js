@@ -4,11 +4,13 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const dotenv = require("dotenv");
+const path = require("path");
 dotenv.config();
 //-------------------------------------------------------------------------------------
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "Client", "build")));
 
 //-------------------------------------------------------------------------------------
 // User Auth Schema
@@ -104,6 +106,11 @@ app.post("/adduser", (req, res) => {
 });
 
 //-------------------------------------------------------------------------------------
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "Client", "build", "index.html"));
+});
+
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server Running on Port: 5000");
 });
